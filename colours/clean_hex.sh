@@ -1,7 +1,8 @@
 #!/bin/bash
 
-# cleans a raw one line hex list outputted from seaborn, eg plt.as_hex () into something
-# gnuplot can use. Takes in file named cb00, outputs to cb00.pal
+# cleans a raw one line hex list outputted by running
+# $ python3 colours.py | tr ', ' '\r\n' | tr -d '[' | tr -d ']'
+# into something gnuplot can use. Takes in file named cb00, outputs to cb00.pal
 
 INFILE=$1
 OUTFILE=$1".pal"
