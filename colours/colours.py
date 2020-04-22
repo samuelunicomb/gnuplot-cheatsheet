@@ -28,12 +28,18 @@ elif len(sys.argv[3]) == 2:
 elif len(sys.argv[3]) == 3:
   cname=sys.argv[3]
 
-sns.palplot(sns.cubehelix_palette(a, start=b, rot=c))
-
 name=sys.argv[1]+'-'+bname+'-'+cname
+
+# create palette
+pal = sns.cubehelix_palette(a, start=b, rot=c, light=.98)
+
+# create plot
+sns.palplot(pal)
+
+# save figure
 #plt.savefig('%s.pdf' % name)
 
-#plt.show ()
+# output figure
+plt.show ()
 
-pal = sns.cubehelix_palette(a, start=b, rot=c)
 print (pal.as_hex ())
