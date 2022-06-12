@@ -68,7 +68,7 @@ The alphabet `{/Symbol a}` and `{/Symbol A}` produce lower- and upper-case alpha
 
 | ALPHABET | SYMBOL | ALPHABET | SYMBOL | alphabet | symbol | alphabet | symbol |
 |----------|----------|----------|----------|----------|----------|----------|----------|
-A  | Alpha    | N  | Nu       | a  | alpha    | n  | nu
+A  | $\Alpha$    | N  | Nu       | a  | alpha    | n  | nu
 B  | Beta     | O  | Omicron  | b  | beta     | o  | omicron
 C  | Chi      | P  | Pi       | c  | chi      | p  | pi
 D  | Delta    | Q  | Theta    | d  | delta    | q  | theta
