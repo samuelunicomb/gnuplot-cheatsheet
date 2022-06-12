@@ -1,8 +1,15 @@
 # gnuplot cheat sheet
 
+WORK IN PROGRESS!
+
+### Contents
+
+1. [Formatting options](### Formatting)
+2. [Greek alphabet](### Greek alphabet)
+
 Below I maintain the gnuplot options and commands that I use most frequently. It is very far from exhaustive and is personal. I update it whenever I learn handy tricks and shorthand. When in doubt I consult a [HTML version](http://web.mit.edu/gnuplot_v4.2/doc/htmldocs/node1.html) of the gnuplot documentation. This version, 4.2, is out of date, but still mostly relevant. Up-to-date information can be found [here](http://www.gnuplot.info/), but unfortunately docs are in pdf formate. Demo are in HTML, which is handy.
 
-### Formatting commands
+### Formatting
 
 In this section I list the `set` commands I use most frequently. For instance, to set all axes to `logscale`, we specify `set logscale`. They can by undone using the `unset` command, for instance, `unset logscale`. In the interpreter, option status can be verified with the `show` command, for instance, `show logscale` will indicate which axes are set to logarithmic, versus linear scale.
 
@@ -40,7 +47,11 @@ Set title
 Set the format of x and y tic lables
 
 * `set format x "10^{%L}"` tic labels as 10<sup>2</sup>
-* `set format y "10^{%L}"`
+* `set format x "..."` tic labels as...
+* `set format x "..."` tic labels as...
+* `set format x "..."` tic labels as...
+* `set format x "..."` tic labels as...
+* `set format x "..."` tic labels as...
 
 ### Plotting commands
 
@@ -50,33 +61,34 @@ Now we get to the actual plotting commands. Plotting column data. Note that the 
 * `with` is the same as `w` to specify line type
 * `using` is the same as `u`
 * the type of curve is indicated by
-	1. `p` means `points`
-	2. `l` means `lines`
+	1. `l` means `lines`
+	2. `p` means `points`
 	3. `lp` means `linespoints`
 * the type of curve is indicated by
-	1. `pt` means `pointtype`
-	2. `lt` means `linetype`
+	1. `lt` means `linetype`
+	2. `pt` means `pointtype`
 	3. `dt` means `dashtype`
 
 For example,
 
-`p "filename" u 2:3 w p pt 7 ps 0.5 t "titlestring"`
+* `p "filename" u 2:3 w p pt 7 ps 0.5 t "titlestring"`
+* `p "filename"
 
-Greek alphabet
+### Greek alphabet
 
-The alphabet `{/Symbol a}` and `{/Symbol A}` produce lower- and upper-case alpha, respectively.
+To produce greek letters for symbols in figure titles and axis lable, we use symbolic markup. The alphabet... keys `s` and `S` through the symbolic markup `{/Symbol s}` and `{/Symbol S}` produce the symbols &sigma; and &Sigma;, respectively.
 
-| ALPHABET | SYMBOL | ALPHABET | SYMBOL | alphabet | symbol | alphabet | symbol |
-|----------|----------|----------|----------|----------|----------|----------|----------|
-A  | $\Alpha$    | N  | Nu       | a  | alpha    | n  | nu
-B  | Beta     | O  | Omicron  | b  | beta     | o  | omicron
-C  | Chi      | P  | Pi       | c  | chi      | p  | pi
-D  | Delta    | Q  | Theta    | d  | delta    | q  | theta
-E  | Epsilon  | R  | Rho      | e  | epsilon  | r  | rho
-F  | Phi      | S  | Sigma    | f  | phi      | s  | sigma
-G  | Gamma    | T  | Tau      | g  | gamma    | t  | tau
-H  | Eta      | U  | Upsilon  | h  | eta      | u  | upsilon
-I  | iota     | W  | Omega    | i  | iota     | w  | omega
-K  | Kappa    | X  | Xi       | k  | kappa    | x  | xi
-L  | Lambda   | Y  | Psi      | l  | lambda   | y  | psi
-M  | Mu       | Z  | Zeta     | m  | mu       | z  | zeta
+| key | greek | key | greek | key | greek | key | greek |
+|-----|-------------|-----|-------------|-----|-------------|-----|-------------|
+|  A  |  &Alpha;    |  N  |  &Nu;       |  a  |  &alpha;    |  n  |  &nu;       |
+|  B  |  &Beta;     |  O  |  &Omicron;  |  b  |  &beta;     |  o  |  &omicron;  |
+|  C  |  &Chi;      |  P  |  &Pi;       |  c  |  &chi;      |  p  |  &pi;       |
+|  D  |  &Delta;    |  Q  |  &Theta;    |  d  |  &delta;    |  q  |  &theta;    |
+|  E  |  &Epsilon;  |  R  |  &Rho;      |  e  |  &epsilon;  |  r  |  &rho;      |
+|  F  |  &Phi;      |  S  |  &Sigma;    |  f  |  &phi;      |  s  |  &sigma;    |
+|  G  |  &Gamma;    |  T  |  &Tau;      |  g  |  &gamma;    |  t  |  &tau;      |
+|  H  |  &Eta;      |  U  |  &Upsilon;  |  h  |  &eta;      |  u  |  &upsilon;  |
+|  I  |  &iota;     |  W  |  &Omega;    |  i  |  &iota;     |  w  |  &omega;    |
+|  K  |  &Kappa;    |  X  |  &Xi;       |  k  |  &kappa;    |  x  |  &xi;       |
+|  L  |  &Lambda;   |  Y  |  &Psi;      |  l  |  &lambda;   |  y  |  &psi;      |
+|  M  |  &Mu;       |  Z  |  &Zeta;     |  m  |  &mu;       |  z  |  &zeta;     |
