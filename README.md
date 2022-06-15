@@ -76,7 +76,7 @@ For example,
 
 ### Greek alphabet
 
-To produce greek letters for symbols in figure titles and axis lable, we use symbolic markup. The alphabet... keys `s` and `S` through the symbolic markup `{/Symbol s}` and `{/Symbol S}` produce the symbols &sigma; and &Sigma;, respectively.
+To produce greek letters for symbols in figure titles and axis lable, we use symbolic markup. The alphabet... keys `s` and `S` through the symbolic markup `{/Symbol s}` and `{/Symbol S}` produce the symbols &sigma; and &Sigma;, respectively. For example, `set title "{/Symbol b}-decay"`.
 
 | key | greek | key | greek | key | greek | key | greek |
 |-----|-------------|-----|-------------|-----|-------------|-----|-------------|
