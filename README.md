@@ -9,36 +9,31 @@ WORK IN PROGRESS!
 
 Below I maintain the gnuplot options and commands that I use most frequently. It is very far from exhaustive and is personal. I update it whenever I learn handy tricks and shorthand. When in doubt I consult a [HTML version](http://web.mit.edu/gnuplot_v4.2/doc/htmldocs/node1.html) of the gnuplot documentation. This version, 4.2, is out of date, but still mostly relevant. Up-to-date information can be found [here](http://www.gnuplot.info/), but unfortunately docs are in pdf formate. Demo are in HTML, which is handy.
 
-### Formatting
+## Formatting
 
 In this section I list the `set` commands I use most frequently. For instance, to set all axes to `logscale`, we specify `set logscale`. They can by undone using the `unset` command, for instance, `unset logscale`. In the interpreter, option status can be verified with the `show` command, for instance, `show logscale` will indicate which axes are set to logarithmic, versus linear scale.
 
 There is a great number of options, the following is a tiny subset that I've found helpful in my own workflow.
 
-#### logscale, grid
+### logscale, grid
 
 * `set logscale` sets all axes to logscale
 * `set logscale x` sets just the x axis to logscale
-* `set logscale y` sets just the y axis to logscale
 * `set logscale xy` sets both x and y axes to logscale
 
 To control the grid,
 
-* `set grid` produces a grid
-* `set grid xtics` only produces vertical grid lines
-* `set grid ytics` only produces horizontal grid lines
+* `set grid` produces a grid, x and y
+* `set grid xtics` produces vertical grid lines
 * `set grid mxtics` produces grid on minor x tics in logscale
-* `set grid mytics` produces grid on minor x tics in logscale
 
 To specify the range
 
 * `set xrange[xmin:xmax]` x axis from `xmin` and `xmax`  
-* `set yrange[ymin:ymax]` y axis from `ymin` and `ymax`
 
 Set horizontal and vertical axis labels
 
 * `set xlabel "xlabelstring"` sets x label to `xlabelstring`
-* `set ylabel "ylabelstring"` sets y label to `ylabelstring`
 
 Set title
  
@@ -46,12 +41,16 @@ Set title
 
 Set the format of x and y tic lables
 
-* `set format x "10^{%L}"` tic labels as 10<sup>2</sup>
-* `set format x "..."` tic labels as...
-* `set format x "..."` tic labels as...
-* `set format x "..."` tic labels as...
-* `set format x "..."` tic labels as...
-* `set format x "..."` tic labels as...
+* `set format x "%t"; set xtics (5,10); p x` produces "5.0" and "1.0"
+* `set format x "%s"; set xtics (500,1000); p x` produces "500" and "1.0"
+* `set format x "%+-12.3f"; set xtics (12345); p x` produces "+12345.000"
+* `set format x "%.2t*10^%+03T"; set xtic (12345); p x`produces "1.23*10^+04"
+* `set format x "%s*10^{%S}"; set xtic (12345); p x` produces "12.345*10^{3}"
+* `set format x "%s %cg"; set xtic (12345); p x` produces "12.345 kg"
+* `set format x "%.0P pi"; set xtic (6.283185); p x` produces "2 pi"
+* `set format x "%.0f%%"; set xtic (50); p x` produces "50%"
+* `set format x "10^{%L}"; set xtic (1,10,100); p x` produces  10<sup>2</sup>
+
 
 ### Plotting commands
 
@@ -69,7 +68,11 @@ Now we get to the actual plotting commands. Plotting column data. Note that the 
 	2. `pt` means `pointtype`
 	3. `dt` means `dashtype`
 
-For example,
+
+#### plotting curves
+#### plotting heat maps
+#### plotting vector fields
+#### polar plots
 
 * `p "filename" u 2:3 w p pt 7 ps 0.5 t "titlestring"`
 * `p "filename"
