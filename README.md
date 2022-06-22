@@ -1,6 +1,4 @@
-# gnuplot cheat sheet
-
-WORK IN PROGRESS!
+# gnuplot cheat sheet (in progress...)
 
 ### Contents
 
@@ -15,13 +13,14 @@ In this section I list the `set` commands I use most frequently. For instance, t
 
 There is a great number of options, the following is a tiny subset that I've found helpful in my own workflow.
 
-### logscale, grid
+#### logscale
 
-* `set logscale` sets all axes to logscale
-* `set logscale x` sets just the x axis to logscale
-* `set logscale xy` sets both x and y axes to logscale
+* `set logscale` enables log base 10 scaling of all axes
+* `set logscale x` enables log base 10 scaling of x axis
+* `set logscale xy` enables log base 10 scaling of x and y axes
+* `set logscale x 2` enables scaling log base 2 of the x axis
 
-To control the grid,
+#### grid
 
 * `set grid` produces a grid, x and y
 * `set grid xtics` produces vertical grid lines
@@ -31,9 +30,10 @@ To specify the range
 
 * `set xrange[xmin:xmax]` x axis from `xmin` and `xmax`  
 
-Set horizontal and vertical axis labels
+#### labelling
 
-* `set xlabel "xlabelstring"` sets x label to `xlabelstring`
+* `set label "hello" at (1,1)` places the string `hello` at (1,1)
+* `set xlabel "time" rotate by 30` sets x label to `time` and rotates by 30 degrees
 
 Set title
  
