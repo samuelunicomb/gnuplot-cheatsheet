@@ -5,39 +5,37 @@
 1. [Formatting options](### Formatting)
 2. [Greek alphabet](### Greek alphabet)
 
-Below I maintain the gnuplot options and commands that I use most frequently. It is very far from exhaustive and is personal. I update it whenever I learn handy tricks and shorthand. When in doubt I consult a [HTML version](http://web.mit.edu/gnuplot_v4.2/doc/htmldocs/node1.html) of the gnuplot documentation. This version, 4.2, is out of date, but still mostly relevant. Up-to-date information can be found [here](http://www.gnuplot.info/), but unfortunately docs are in pdf formate. Demo are in HTML, which is handy.
 
-## Formatting
+## Formatting options
 
-In this section I list the `set` commands I use most frequently. For instance, to set all axes to `logscale`, we specify `set logscale`. They can by undone using the `unset` command, for instance, `unset logscale`. In the interpreter, option status can be verified with the `show` command, for instance, `show logscale` will indicate which axes are set to logarithmic, versus linear scale.
-
-There is a great number of options, the following is a tiny subset that I've found helpful in my own workflow.
-
-#### logscale
+logscale settings
 
 * `set logscale` enables log base 10 scaling of all axes
 * `set logscale x` enables log base 10 scaling of x axis
 * `set logscale xy` enables log base 10 scaling of x and y axes
 * `set logscale x 2` enables scaling log base 2 of the x axis
 
-#### grid
+grid settings
 
 * `set grid` produces a grid, x and y
 * `set grid xtics` produces vertical grid lines
 * `set grid mxtics` produces grid on minor x tics in logscale
 
-To specify the range
+range settings
 
 * `set xrange[xmin:xmax]` x axis from `xmin` and `xmax`  
 
-#### labelling
+titles and axis labels
 
-* `set label "hello" at (1,1)` places the string `hello` at (1,1)
-* `set xlabel "time" rotate by 30` sets x label to `time` and rotates by 30 degrees
+* `set title "title"` sets title to `title`
+* `set label "label" at (1,1)` places the string `label ` at (1,1)
+* `set xlabel "label" rotate by 30` sets x label to `label ` and rotates by 30 degrees
 
-Set title
- 
-* `set title "titlestring"` sets title to `titlestring`
+
+
+plots with multiple panels
+
+* `set multiplot layout m,n title "title"` `m` by `n` multiplot, titled `title`
 
 Set the format of x and y tic lables
 
@@ -52,7 +50,7 @@ Set the format of x and y tic lables
 * `set format x "10^{%L}"; set xtic (1,10,100); p x` produces  10<sup>2</sup>
 
 
-### Plotting commands
+## Plotting commands
 
 Now we get to the actual plotting commands. Plotting column data. Note that the following shorthand is available,
 
@@ -77,6 +75,15 @@ Now we get to the actual plotting commands. Plotting column data. Note that the 
 * `p "filename" u 2:3 w p pt 7 ps 0.5 t "titlestring"`
 * `p "filename"
 
+## gnuplotrc
+
+On a mac is stored in `path to gnuplotrc in mac`. I like to include
+
+* `set term qt font ",12" size 700,550` self explanatory
+* `set key font ",11"` why do I respecify font size? check
+
+## Miscellanea
+
 ### Greek alphabet
 
 To produce greek letters for symbols in figure titles and axis lable, we use symbolic markup. The alphabet... keys `s` and `S` through the symbolic markup `{/Symbol s}` and `{/Symbol S}` produce the symbols &sigma; and &Sigma;, respectively. For example, `set title "{/Symbol b}-decay"`.
@@ -95,3 +102,12 @@ To produce greek letters for symbols in figure titles and axis lable, we use sym
 |  K  |  &Kappa;    |  X  |  &Xi;       |  k  |  &kappa;    |  x  |  &xi;       |
 |  L  |  &Lambda;   |  Y  |  &Psi;      |  l  |  &lambda;   |  y  |  &psi;      |
 |  M  |  &Mu;       |  Z  |  &Zeta;     |  m  |  &mu;       |  z  |  &zeta;     |
+
+### About this file
+
+Above I maintain the gnuplot options and commands that I use most frequently. It is very far from exhaustive and is personal. I update it whenever I learn handy tricks and shorthand. When in doubt I consult a [HTML version](http://web.mit.edu/gnuplot_v4.2/doc/htmldocs/node1.html) of the gnuplot documentation. This version, 4.2, is out of date, but still mostly relevant. Up-to-date information can be found [here](http://www.gnuplot.info/), but unfortunately docs are in pdf formate. Demo are in HTML, which is handy.
+
+
+Above I list the `set` commands I use most frequently. For instance, to set all axes to `logscale`, we specify `set logscale`. They can by undone using the `unset` command, for instance, `unset logscale`. In the interpreter, option status can be verified with the `show` command, for instance, `show logscale` will indicate which axes are set to logarithmic, versus linear scale.
+
+Also, note that there is a great number of options, the preceding is a tiny subset that I've found helpful in my own workflow.
