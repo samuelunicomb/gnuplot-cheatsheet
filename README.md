@@ -15,15 +15,18 @@ logscale settings
 * `set logscale xy` enables log base 10 scaling of x and y axes
 * `set logscale x 2` enables scaling log base 2 of the x axis
 
-grid settings
+grid and key settings
 
 * `set grid` produces a grid, x and y
 * `set grid xtics` produces vertical grid lines
 * `set grid mxtics` produces grid on minor x tics in logscale
+* `set key top left` puts legend at top left
+* `set key center right` puts legend at center right
 
 range settings
 
-* `set xrange[xmin:xmax]` x axis from `xmin` and `xmax`  
+* `set xrange[xmin:xmax]` x axis from `xmin` and `xmax`
+* `set yrange[ymin:ymax]` y axis from `ymin` and `ymax`
 
 titles and axis labels
 
@@ -31,11 +34,13 @@ titles and axis labels
 * `set label "label" at (1,1)` places the string `label ` at (1,1)
 * `set xlabel "label" rotate by 30` sets x label to `label ` and rotates by 30 degrees
 
-
-
 plots with multiple panels
 
 * `set multiplot layout m,n title "title"` `m` by `n` multiplot, titled `title`
+* `set lmargin 5` sets the left margin 
+* `set rmargin 5` sets the right margin 
+* `set tmargin 5` sets the top margin 
+* `set bmargin 5` sets the bottom margin 
 
 Set the format of x and y tic lables
 
