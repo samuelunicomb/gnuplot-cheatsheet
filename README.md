@@ -1,46 +1,51 @@
-# gnuplot cheat sheet (in progress...)
+# gnuplot cheatsheet 
 
-### Contents
+Detailing common options in my favourite plotting program. This is a work in progress.
 
-1. [Formatting options](### Formatting)
-2. [Greek alphabet](### Greek alphabet)
 
 
 ## Formatting options
 
-logscale settings
+Axis logscale settings
 
-* `set logscale` enables log base 10 scaling of all axes
-* `set logscale x` enables log base 10 scaling of x axis
-* `set logscale xy` enables log base 10 scaling of x and y axes
-* `set logscale x 2` enables scaling log base 2 of the x axis
+```
+set logscale        # enables log base 10 scaling of all axes
+set logscale x      # enables log base 10 scaling of x axis
+set logscale xy     # enables log base 10 scaling of x and y axes
+set logscale x 2    # enables scaling log base 2 of the x axis
+```
 
-grid and key settings
+Grid and key settings
 
-* `set grid` produces a grid, x and y
-* `set grid xtics` produces vertical grid lines
-* `set grid mxtics` produces grid on minor x tics in logscale
-* `set key top left` puts legend at top left
-* `set key center right` puts legend at center right
+```
+set grid               # produces a grid, x and y
+set grid xtics         # produces vertical grid lines
+set grid mxtics        # produces grid on minor x tics in logscale
+set key top left       # puts legend at top left
+set key center right   # puts legend at center right
+```
 
-range settings
+Axis range settings
 
-* `set xrange[xmin:xmax]` x axis from `xmin` and `xmax`
-* `set yrange[ymin:ymax]` y axis from `ymin` and `ymax`
+```
+set xrange[xmin:xmax]       # x axis from `xmin` to `xmax`
+set yrange[ymin:ymax]       # y axis from `ymin` to `ymax`
+```
 
-titles and axis labels
+Titles and axis labels
 
-* `set title "title"` sets title to `title`
-* `set label "label" at (1,1)` places the string `label ` at (1,1)
-* `set xlabel "label" rotate by 30` sets x label to `label ` and rotates by 30 degrees
+```
+set title "title"                  # sets title to `title`
+set label "label" at (1,1)         # places the string `label` at (1,1)
+set xlabel "label" rotate by 30    # sets x label to `label` and rotates by 30 degrees
+```
 
-plots with multiple panels
+Plots with multiple panels
 
-* `set multiplot layout m,n title "title"` `m` by `n` multiplot, titled `title`
-* `set lmargin 5` sets the left margin 
-* `set rmargin 5` sets the right margin 
-* `set tmargin 5` sets the top margin 
-* `set bmargin 5` sets the bottom margin 
+```
+set multiplot layout m,n title "title"   # `m` by `n` multiplot, titled `title`
+set lmargin 5                            # sets left margin (r t and b also possible)
+```
 
 Set the format of x and y tic lables
 
@@ -54,8 +59,14 @@ Set the format of x and y tic lables
 * `set format x "%.0f%%"; set xtic (50); p x` produces "50%"
 * `set format x "10^{%L}"; set xtic (1,10,100); p x` produces  10<sup>2</sup>
 
+Note, `sprintf("%d", i)` is super helpful if `i` is a variable, for example in a `for` loop.
 
-## Plotting commands
+## Outputting data to table
+
+* `set table 'file.dat'; p f(x); unset table` writes `f(x)` to `file.dat`
+
+
+## Outputting data to plot
 
 Now we get to the actual plotting commands. Plotting column data. Note that the following shorthand is available,
 
@@ -78,16 +89,21 @@ Now we get to the actual plotting commands. Plotting column data. Note that the 
 #### polar plots
 
 * `p "filename" u 2:3 w p pt 7 ps 0.5 t "titlestring"`
-* `p "filename"
+* `p "filename"...`
 
-## gnuplotrc
+## gnuplotrc and ~/.gnuplot
 
-On a mac is stored in `path to gnuplotrc in mac`. I like to include
+`gnuplotrc` is a startup file that sets style macros using any combination of the above specifiers. On macOS, this is normally stored in `/usr/local/Cellar/gnuplot/*/share/gnuplot/*`, where `*` is version. However, if `.gnuplot` is present in `~`, it overrides `gnuplotrc`. Use `~/.gnuplot` which will persist after version updates.  Mine includes something to the effect of
 
-* `set term qt font ",12" size 700,550` self explanatory
-* `set key font ",11"` why do I respecify font size? check
+```
+set term qt size 800,600    # specifies terminal type and plot window size
+set tics font ",12"         # specifies the font size of axis tics
+set key font ",12"          # specifies the font size of legend text
+```
 
 ## Miscellanea
+
+* `set samples 100` sets the sampling rate for functions to 100
 
 ### Greek alphabet
 
