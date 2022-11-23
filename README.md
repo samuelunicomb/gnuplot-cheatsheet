@@ -65,6 +65,9 @@ Note, `sprintf("%d", i)` is super helpful if `i` is a variable, for example in a
 
 * `set table 'file.dat'; p f(x); unset table` writes `f(x)` to `file.dat`
 
+## Error bars
+
+To do
 
 ## Outputting data to plot
 
