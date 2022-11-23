@@ -9,10 +9,10 @@ Detailing common options in my favourite plotting program. This is a work in pro
 Axis logscale settings
 
 ```
-set logscale        # enables log base 10 scaling of all axes
-set logscale x      # enables log base 10 scaling of x axis
-set logscale xy     # enables log base 10 scaling of x and y axes
-set logscale x 2    # enables scaling log base 2 of the x axis
+set logscale           # enables log base 10 scaling of all axes
+set logscale x         # enables log base 10 scaling of x axis
+set logscale xy        # enables log base 10 scaling of x and y axes
+set logscale x 2       # enables scaling log base 2 of the x axis
 ```
 
 Grid and key settings
@@ -28,8 +28,8 @@ set key center right   # puts legend at center right
 Axis range settings
 
 ```
-set xrange[xmin:xmax]       # x axis from `xmin` to `xmax`
-set yrange[ymin:ymax]       # y axis from `ymin` to `ymax`
+set xrange[xmin:xmax]       # x axis from xmin to xmax
+set yrange[ymin:ymax]       # y axis from ymin to ymax
 ```
 
 Titles and axis labels
@@ -37,14 +37,14 @@ Titles and axis labels
 ```
 set title "title"                  # sets title to `title`
 set label "label" at (1,1)         # places the string `label` at (1,1)
-set xlabel "label" rotate by 30    # sets x label to `label` and rotates by 30 degrees
+set xlabel "label" rotate by 30    # sets x label to `label`, rotates 30 degrees
 ```
 
 Plots with multiple panels
 
 ```
-set multiplot layout m,n title "title"   # `m` by `n` multiplot, titled `title`
-set lmargin 5                            # sets left margin (r t and b also possible)
+set multiplot layout m,n title "title"   # m by n multiplot, titled `title`
+set [lrtb]margin 5                       # sets left, right, top, bottom margin
 ```
 
 Set the format of x and y tic lables
@@ -87,6 +87,14 @@ Now we get to the actual plotting commands. Plotting column data. Note that the 
 #### plotting heat maps
 #### plotting vector fields
 #### polar plots
+#### plotting specific points
+
+```
+set for[i=1:10] arrow from i, graph 0 to i, graph 1 nohead # vertical lines
+set object circle at 1,1 radius 0.05 fillcolor rgb 'black' fillstyle solid border
+```
+
+#### misc
 
 * `p "filename" u 2:3 w p pt 7 ps 0.5 t "titlestring"`
 * `p "filename"...`
