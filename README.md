@@ -32,7 +32,7 @@ set xrange[xmin:xmax]       # x axis from xmin to xmax
 set yrange[ymin:ymax]       # y axis from ymin to ymax
 ```
 
-Titles, axis labels and floating labels
+Titles, axis labels and floating labels. Can specify position `at x,y` or `at graph x,y`
 
 ```
 set title "title"                  # sets title to `title`
