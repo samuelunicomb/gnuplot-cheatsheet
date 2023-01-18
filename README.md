@@ -32,12 +32,12 @@ set xrange[xmin:xmax]       # x axis from xmin to xmax
 set yrange[ymin:ymax]       # y axis from ymin to ymax
 ```
 
-Titles and axis labels
+Titles, axis labels and floating labels
 
 ```
 set title "title"                  # sets title to `title`
-set label "label" at (1,1)         # places the string `label` at (1,1)
 set xlabel "label" rotate by 30    # sets x label to `label`, rotates 30 degrees
+set label "label" at (1,1)         # places the string `label` at (1,1)
 ```
 
 Plots with multiple panels
@@ -101,6 +101,27 @@ set object circle at 1,1 radius 0.05 fillcolor rgb 'black' fillstyle solid borde
 
 * `p "filename" u 2:3 w p pt 7 ps 0.5 t "titlestring"`
 * `p "filename"...`
+
+### run interpreter with arguments
+
+ARG1
+> call 'fig.plt' 1 2
+> call 'script.plt' 'file.dat'
+
+call 'scriplt.plt' 1 where file contains a=int(ARG1); p 'file.dat' u 1:a
+
+You can concatenate strings by writing
+
+```
+string1='directory/'
+string2='file.dat'
+string3=ARG1
+
+p string1.string2 w l,\
+  string3 w p 
+```
+
+We might call the above with `call 'script.plt' 'anotherfile.dat'`.
 
 ## gnuplotrc and ~/.gnuplot
 
