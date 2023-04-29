@@ -37,6 +37,7 @@ Titles, axis labels and floating labels. Can specify position `at x,y` or `at gr
 ```
 set title "title"                  # sets title to `title`
 set xlabel "label" rotate by 30    # sets x label to `label`, rotates 30 degrees
+set xlabel "label" offset 0,-2     # sets x label to `label`, shifts 2 units vertically
 set label "label" at (1,1)         # places the string `label` at (1,1)
 ```
 
